@@ -1,0 +1,4 @@
+<div class="notification-container" *ngIf="message"
+     [ngClass]="{'success': type === 'success', 'error': type === 'error'}">
+  {{ message }}
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Admin Dashboard</h2>
+  <!-- Notification Component -->
+  <app-notification [message]="notificationMessage" [type]="notificationType"></app-notification>
+
+  <button class="btn-logout" (click)="logout()">Logout</button> <!-- Logout Button -->
+  <ul>
+    <li class="feedback-item" *ngFor="let feedback of feedbacks">
+      {{ feedback.text }} - Helpful: {{ feedback.helpfulCount }}
+      <button (click)="deleteFeedback(feedback.id)" class="delete-button">Delete</button>
+    </li>
+  </ul>
+</div>

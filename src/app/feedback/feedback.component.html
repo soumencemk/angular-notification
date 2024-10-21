@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Feedback List</h2>
+  <app-notification [message]="notificationMessage" [type]="notificationType"></app-notification> <!-- Notification Component -->
+  <button class="btn-logout" (click)="logout()">Logout</button>
+  <ul>
+    <li class="feedback-item" *ngFor="let feedback of feedbacks">
+      {{ feedback.text }} - Helpful: {{ feedback.helpfulCount }}
+      <button (click)="rateFeedback(feedback)">Rate as Helpful</button>
+    </li>
+  </ul>
+  <textarea [(ngModel)]="newFeedback" placeholder="Enter feedback"></textarea>
+  <button (click)="addFeedback()">Submit Feedback</button>
+</div>
